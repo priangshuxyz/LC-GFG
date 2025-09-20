@@ -54,3 +54,41 @@ Node* sortedMerge(Node* head1, Node* head2) {
     }
 }
 ```
+<p>[Efficient Approach] Using Iterative Merge - O(n+m) Time and O(1) Space
+The idea is to iteratively merge two sorted linked lists using a dummy node to simplify the process. A current pointer tracks the last node of the merged list. We compare the nodes from both lists and append the smaller node to the merged list. Once one list is fully traversed, the remaining nodes from the other list are appended. The merged list is returned starting from the node after the dummy node. </p>
+
+```cpp
+Node* sortedMerge(Node* head1, Node* head2) {
+  
+    // create a dummy node to simplify 
+    // the merging process
+    Node* dummy = new Node(-1);
+    Node* curr = dummy;
+
+    // iterate through both linked lists
+    while (head1 != nullptr && head2 != nullptr) {
+      
+        // add the smaller node to the merged list
+        if (head1->data <= head2->data) {
+            curr->next = head1;
+            head1 = head1->next;
+        } else {
+            curr->next = head2;
+            head2 = head2->next;
+        }
+        curr = curr->next;
+    }
+
+    // if any list is left, append it to
+    // the merged list
+    if (head1 != nullptr) {
+        curr->next = head1;
+    } else {
+        curr->next = head2;
+    }
+
+    // return the merged list starting
+    // from the next of dummy node
+    return dummy->next;
+}
+```
