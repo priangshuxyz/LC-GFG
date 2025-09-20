@@ -4,7 +4,6 @@ The idea is to use an array to store all the node data from both linked lists, s
 ```
 Node *sortedMerge(Node *head1, Node *head2) {
     vector<int> arr;
-
     // pushing the values of the first linked list
     while (head1 != nullptr) {
         arr.push_back(head1->data);
