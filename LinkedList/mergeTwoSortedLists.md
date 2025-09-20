@@ -31,8 +31,10 @@ Node *sortedMerge(Node *head1, Node *head2) {
 
     return dummy->next;
 }
+
 <p>[Better Approach] Using Recursive Merge - O(n+m) Time and O(n+m) Space
 The idea is to pick the smaller head node at each step and let recursion merge the remaining parts. if one list is empty, return the other; otherwise the smaller node becomes the next node in the merged list and its next is the recursive merge of the rest.</p>
+
 ```cpp
 Node* sortedMerge(Node* head1, Node* head2) {
 
