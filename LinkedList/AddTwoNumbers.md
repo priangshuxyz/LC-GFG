@@ -9,6 +9,7 @@ If one list ends first, continue with the other plus carry.
 If carry remains after the loop, add a final node.
 Reverse the resulting linked list to get the final sum.
 </p>
+
 ```cpp
 Node *reverse(Node *head) {
     Node *prev = nullptr, *curr = head, *next;
