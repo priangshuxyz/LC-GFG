@@ -44,7 +44,7 @@ Node *reverseKGroup(Node *head, int k) {
         }
 
         // Move tail to the end of the reversed group
-        tail = groupHead;
+        tail = groupedHead;
     }
 
     return newHead;
