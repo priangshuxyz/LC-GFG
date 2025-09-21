@@ -5,6 +5,7 @@ Flip: You reverse just that small section of the chain.
 Connect:
 The end of the last section you flipped (tail) connects to the start of the newly flipped section.
 You then update your tail to be the end of the section you just flipped, getting it ready for the next connection.</p>
+
 ```cpp
 Node *reverseKGroup(Node *head, int k) {
     if (head == nullptr) {
@@ -48,4 +49,4 @@ Node *reverseKGroup(Node *head, int k) {
 
     return newHead;
 }
-```
+
