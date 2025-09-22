@@ -15,4 +15,4 @@ The idea is to start traversing the Linked List from head node and while travers
         st.insert(currNode); 
         currNode = currNode->next;
     }
-    return -1;
+    return currNode->data;
