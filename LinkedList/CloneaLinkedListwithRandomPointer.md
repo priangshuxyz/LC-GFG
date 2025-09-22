@@ -6,7 +6,7 @@ newNode->next = map[oldNode->next]
 newNode->random = map[oldNode->random]</p>
 
 ```cpp
-unordered_map<Node*, Node*> mp;
+    unordered_map<Node*, Node*> mp;
     Node *curr = head;
     // Traverse original linked list to store new 
   	// nodes corresponding to original linked list
