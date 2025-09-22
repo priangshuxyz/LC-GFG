@@ -3,16 +3,13 @@
 The idea is to start traversing the Linked List from head node and while traversing insert each node into the HashSet. If there is a loop present in the Linked List, there will be a node which will be already present in the hash set.</p>
 
 ```cpp
-    unordered_set<Node*> st; 
-    Node* currNode = head; 
-    // traverse the linked list
-    while (currNode != nullptr) {
-        // if the current node is already in the HashSet,
-        // then this is the starting node of the loop
-        if (st.find(currNode) != st.end()) {
-            return currNode->data;  
+    unordered_set<ListNode*> st;
+        ListNode* currNode = head;
+        while (currNode != nullptr) {
+            if (st.find(currNode) != st.end()) {
+                return currNode;
+            }
+            st.insert(currNode);
+            currNode = currNode->next;
         }
-        st.insert(currNode); 
-        currNode = currNode->next;
-    }
-    return currNode->data;
+        return currNode;
