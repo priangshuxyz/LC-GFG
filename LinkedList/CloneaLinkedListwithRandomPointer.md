@@ -25,6 +25,7 @@ newNode->random = map[oldNode->random]</p>
     return mp[head];
 ```
 <p>[Expected Approach] By Inserting Nodes In-place - O(n) Time and O(1) Space
+The idea is to create duplicate of a node and instead of storing in a separate hash table, we can insert it in between the original node and the next node. Now, we will have new nodes at alternate positions. 
 </p>
 
 ```cpp
