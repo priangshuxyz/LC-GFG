@@ -16,8 +16,8 @@ The idea is to start traversing the Linked List from head node and while travers
 ```
 <p>[Expected Approach] Using Floyd's loop detection algorithm - O(n) Time and O(1) Space
 This idea is to use Floyd’s Cycle-Finding Algorithm to find a loop in a linked list. After detecting that the loop is present using above algorithm. we will reset the slow pointer to head node and fast pointer will remain at its position. Both slow and fast pointers move one step ahead until fast not equals to slow. The meeting point will be the Starting node of loop.</p>
+
 ```cpp
-    
     Node* slow = head;
     Node* fast = head;
     // Traverse the list
