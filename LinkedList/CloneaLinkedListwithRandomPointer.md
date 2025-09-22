@@ -29,13 +29,13 @@ The idea is to create duplicate of a node and instead of storing in a separate h
 </p>
 
 ```cpp
-if (head == NULL) {
-        return NULL;
+if (head == nullptr) {
+        return nullptr;
     }
     // Create new nodes and insert them next to 
   	// the original nodes
     Node* curr = head;
-    while (curr != NULL) {
+    while (curr != nullptr) {
         Node* newNode = new Node(curr->data);
         newNode->next = curr->next;
         curr->next = newNode;
@@ -43,8 +43,8 @@ if (head == NULL) {
     }
     // Set the random pointers of the new nodes
     curr = head;
-    while (curr != NULL) {
-        if (curr->random != NULL)
+    while (curr != nullptr) {
+        if (curr->random != nullptr)
             curr->next->random = curr->random->next;
         curr = curr->next->next;
     }
@@ -52,7 +52,7 @@ if (head == NULL) {
     curr = head;
     Node* clonedHead = head->next;
     Node* clone = clonedHead;
-    while (clone->next != NULL) {
+    while (clone->next != nullptr) {
       	// Update the next nodes of original node 
       	// and cloned node
         curr->next = curr->next->next;
@@ -62,6 +62,6 @@ if (head == NULL) {
         curr = curr->next;
         clone = clone->next;
     }
-    curr->next = NULL;
-    clone->next = NULL;
+    curr->next = nullptr;
+    clone->next = nullptr;
     return clonedHead;
