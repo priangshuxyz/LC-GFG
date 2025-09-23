@@ -31,8 +31,9 @@ Move the fast pointer forward by two nodes and move the slow pointer forward by 
 If the slow and fast pointer points to the same node, loop is found.
 Else if the fast pointer reaches NULL, then no loop is found.
 Else repeat the above steps till we reach the end of the linked list or a loop is found.
-Remove Loop in Linked List:
-The idea is similar to finding the starting node of Loop in a Linked List. For this, we will point the slow pointer to head node and fast pointer will remain at its position. Both slow and fast pointers move one step ahead until fast->next is not equals to slow->next. When slow->next equals to fast->next we can easily point fast->next to NULL to remove the loop. </p>
+</p>
+<p>Remove Loop in Linked List:
+The idea is similar to finding the starting node of Loop in a Linked List. For this, we will point the slow pointer to head node and fast pointer will remain at its position. Both slow and fast pointers move one step ahead until fast->next is not equals to slow->next. When slow->next equals to fast->next we can easily point fast->next to NULL to remove the loop.</p>
 
 ```cpp
     void removeLoop(Node *head) {
