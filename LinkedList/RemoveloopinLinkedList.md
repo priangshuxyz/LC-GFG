@@ -36,7 +36,7 @@ Else repeat the above steps till we reach the end of the linked list or a loop i
 The idea is similar to finding the starting node of Loop in a Linked List. For this, we will point the slow pointer to head node and fast pointer will remain at its position. Both slow and fast pointers move one step ahead until fast->next is not equals to slow->next. When slow->next equals to fast->next we can easily point fast->next to NULL to remove the loop.</p>
 
 ```cpp
-    void removeLoop(Node *head) {
+void removeLoop(Node *head) {
     // If list is empty or has only one node without loop
     if (head == nullptr || head->next ==nullptr)
         return;
