@@ -19,3 +19,23 @@ The idea is to look at all the elements to its right and check if there's a larg
 ```
 <p>[Expected Approach] Using Stack - O(n) Time and O(n) Space
 <p>The idea is to use a monotonic decreasing stack (stack that maintains elements in decreasing order). We traverse the array from right to left. For each element, we pop elements from the stack that are smaller than or equal to it, since they cannot be the next greater element. If the stack is not empty, the top of the stack is the next greater element. Finally, we push the current element onto the stack.</p></p>
+
+```cpp
+    int n = arr.size();
+    vector<int> res(n, -1);
+    stack<int> stk;
+    for (int i = n - 1; i >= 0; i--) {
+        // Pop elements from the stack that are less
+        // than or equal to the current element
+        while (!stk.empty() && stk.top() <= arr[i]) {
+            stk.pop();
+        }
+        // If the stack is not empty, the top element
+        // is the next greater element
+        if (!stk.empty()) {
+            res[i] = stk.top();
+        }
+        // Push the current element onto the stack
+        stk.push(arr[i]);
+    }
+    return res;
