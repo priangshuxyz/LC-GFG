@@ -35,7 +35,7 @@
     }
     return maxLen;
 ```
-<p>[Expected Approach - 3] Using Two Traversals - O(n) Time and O(1) Space
+<p>[Expected Approach - 3] Using Two Traversals - O(n) Time and O(1) Space</p>
 <li>Use two counters: open and close.</li>
 <li>Traverse once left to right and once right to left.</li>
 <ul>
@@ -49,7 +49,7 @@
     </li>
 </ul>
 <li>Two passes ensure both extra ')' and extra '(' cases are handled.</li>
-</p>
+
 
 ```cpp
     int maxLen = 0;
