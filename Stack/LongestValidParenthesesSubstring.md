@@ -48,6 +48,44 @@
         </ul>
     </li>
 </ul>
-<li>Two passes ensure both extra ')' and extra '(' cases are handled.</li>
+<ul>Two passes ensure both extra ')' and extra '(' cases are handled.</ul>
 </p>
+
+```cpp
+    int maxLen = 0;
+    // Left to Right Traversal
+    int open = 0, close = 0;
+    for (int i=0; i<s.length(); i++) {
+        char ch=s[i];
+        if (ch == '(') {
+            open++;
+        }
+        else if (ch == ')') {
+            close++;
+        }
+        if (open == close) {
+            maxLen = max(maxLen, 2 * close);
+        }
+        else if (close > open) {
+            open = close = 0;
+        }
+    }
+    // Right to Left Traversal
+    open = close = 0;
+    for (int i = s.size() - 1; i >= 0; i--) {
+        if (s[i] == '(') {
+            open++;
+        }
+        else if (s[i] == ')') {
+            close++;
+        }
+
+        if (open == close) {
+            maxLen = max(maxLen, 2 * open);
+        }
+        else if (open > close) {
+            open = close = 0;
+        }
+    }
+    return maxLen;
 
