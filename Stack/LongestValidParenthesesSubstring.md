@@ -48,7 +48,7 @@
         </ul>
     </li>
 </ul>
-<ul>Two passes ensure both extra ')' and extra '(' cases are handled.</ul>
+<li>Two passes ensure both extra ')' and extra '(' cases are handled.</li>
 </p>
 
 ```cpp
