@@ -45,7 +45,7 @@
             <li>If imbalance occurs (close > open in left-to-right, or open > close in right-to-left),
                 reset both counters.</li>
         </ul>
-    </li>
+</li>
 <li>Two passes ensure both extra ')' and extra '(' cases are handled.</li>
 </p>
 
