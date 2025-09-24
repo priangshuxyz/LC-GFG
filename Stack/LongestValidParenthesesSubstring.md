@@ -39,12 +39,10 @@
 <li>Use two counters: open and close.</li>
 <li>Traverse once left to right and once right to left.</li>
 <li>For each character:
-        <ul>
-            <li>Increment open if '(', else increment close.</li>
-            <li>If open == close, update max length = 2 * close.</li>
-            <li>If imbalance occurs (close > open in left-to-right, or open > close in right-to-left),
-                reset both counters.</li>
-        </ul>
+    <li>Increment open if '(', else increment close.</li>
+    <li>If open == close, update max length = 2 * close.</li>
+    <li>If imbalance occurs (close > open in left-to-right, or open > close in right-to-left),
+        reset both counters.</li>
 </li>
 <li>Two passes ensure both extra ')' and extra '(' cases are handled.</li>
 </p>
