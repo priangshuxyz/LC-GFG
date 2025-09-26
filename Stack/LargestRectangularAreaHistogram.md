@@ -14,5 +14,13 @@
             curr += arr[i];
         res = max(res, curr);
     }
-    
     return res;
+```
+
+<p>[Expected Approach] Using Stack - O(n) Time and O(n) Space</p>
+<p>The goal is to find the largest rectangle by treating each bar as the shortest bar in a potential rectangle. To do this efficiently, we find the boundaries for each bar by pre-computing its Previous Smaller Element (PSE) and Next Smaller Element (NSE), which are the first shorter bars to the left and right, respectively. <br>
+
+The width of the rectangle for the current bar is calculated as:
+width = index_of_NSE - index_of_PSE - 1 <br>
+
+The area is then height * width. The overall answer is the maximum area found across all bars.</p>
