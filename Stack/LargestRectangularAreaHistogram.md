@@ -45,23 +45,21 @@ vector<int> nextSmaller(vector<int>& arr) {
 }
 // Function to find previous smaller for every element
     vector<int> prevSmaller(vector<int>& arr) {
-    int n = arr.size();
-    vector<int> prevS(n, -1);
-    stack<int> st;
-    for (int i = 0; i < n; ++i) {
-        while (!st.empty() && arr[i] < arr[st.top()]) {
-
+        int n = arr.size();
+        vector<int> prevS(n, -1);
+        stack<int> st;
+        for (int i = 0; i < n; ++i) {
+            while (!st.empty() && arr[i] < arr[st.top()]) {
             // Setting the index of the previous smaller element
-            //  for the top of the stack
-            st.pop();
+            //  for the top of the stack                                                st.pop();
+            }
+            if (!st.empty()) {
+                prevS[i] = st.top();
+            }
+            st.push(i);
         }
-        if (!st.empty()) {
-            prevS[i] = st.top();
-        }
-        st.push(i);
+        return prevS;
     }
-    return prevS;
-}
 // Function to calculate the maximum rectangular
 // area in the Histogram
 int getMaxArea(vector<int>& arr) {
