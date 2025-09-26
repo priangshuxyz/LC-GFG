@@ -51,7 +51,7 @@ vector<int> nextSmaller(vector<int>& arr) {
         for (int i = 0; i < n; ++i) {
             while (!st.empty() && arr[i] < arr[st.top()]) {
             // Setting the index of the previous smaller element
-            //  for the top of the stack                                                st.pop();
+            //  for the top of the stack                                            st.pop();
             }
             if (!st.empty()) {
                 prevS[i] = st.top();
