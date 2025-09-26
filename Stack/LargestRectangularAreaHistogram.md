@@ -80,7 +80,7 @@ int getMaxArea(vector<int>& arr) {
     return maxArea;
 }
 ```
-<p>Leetcode solution</p>
+<p>Leetcode solution:</p>
 
 ```cpp
 class Solution {
