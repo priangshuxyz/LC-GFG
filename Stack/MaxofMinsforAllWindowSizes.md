@@ -89,3 +89,31 @@
         res[i] = max(res[i], res[i + 1]);
     }
     return res;
+```
+
+<p>LC Solution</p>
+```cpp
+    vector<int> result;
+    deque<int> dq; // Stores indices of elements
+
+    for (int i = 0; i < nums.size(); ++i) {
+        // 1. Remove elements from the front that are out of the current window
+        if (!dq.empty() && dq.front() == i - k) {
+            dq.pop_front();
+        }
+
+        // 2. Remove elements from the back that are smaller than the current element
+        while (!dq.empty() && nums[dq.back()] < nums[i]) {
+            dq.pop_back();
+        }
+
+        // Add the current element's index to the back
+        dq.push_back(i);
+
+        // Once the window is full, add the max (at the front) to the result
+        if (i >= k - 1) {
+            result.push_back(nums[dq.front()]);
+        }
+    }
+
+    return result;
