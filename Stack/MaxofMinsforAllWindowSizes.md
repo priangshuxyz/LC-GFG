@@ -92,6 +92,7 @@
 ```
 
 <p>LC Solution</p>
+
 ```cpp
     vector<int> result;
     deque<int> dq; // Stores indices of elements
