@@ -50,3 +50,9 @@
         res[k - 1] = maxMin;
     }
     return res;
+```
+<p>[Expected Approach] Using Stack - O(n) Time and O(n) Space
+<li>Find Boundaries: For each element, use a monotonic stack to find its nearest smaller neighbors (left and right). This defines the maximum window length where it's the minimum.</li>
+<li>Map Candidates: Create an answer array ans. For each element arr[i], use its calculated window length to update ans[length] = max(ans[length], arr[i]).</li>
+<li>Finalize: Iterate backwards through ans, setting ans[i] = max(ans[i], ans[i+1]) to propagate the final answers to all smaller window sizes.</li>
+</p>
