@@ -4,8 +4,9 @@
 ```cpp
 
 class SpecialStack {
-    stack<int> st; 
-    stack<int> minStack; 
+private:
+    stack<int> st;
+    stack<int> minStk;
 public:
     void push(int x) {
         st.push(x);
