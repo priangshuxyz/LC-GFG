@@ -6,49 +6,41 @@
 <br>This avoids the inefficient process of decoding a string and then pushing it back onto a character stack.</p>
 
 ```cpp
-    stack<int> numStack;
-    stack<char> charStack;
-    string temp = "";
-    string res = "";
-    for (int i = 0; i < s.length(); i++) {
-        int cnt = 0;
-        // If Digit, convert it into number and 
-      	// push it into integerstack.
-        if (s[i] >= '0' && s[i] <= '9') {
-            while (s[i] >= '0' && s[i] <= '9') {
-                cnt = cnt * 10 + s[i] - '0';
-                i++;
-            }
-            i--;
-            numStack.push(cnt);
-        }
-        // If closing bracket ']' is encountered
-        else if (s[i] == ']') {
-            temp = "";
-            cnt = numStack.top();
-            numStack.pop();
-          	// pop element till opening bracket '[' is not found in the
-        	// character stack.
-            while (charStack.top() != '[') {
-                temp = charStack.top() + temp;
-                charStack.pop();
-            }
-            charStack.pop();
-            // Repeating the popped string 'temp' count number of times.
-            for (int j = 0; j < cnt; j++)
-                res = res.append(temp);
-            // Push it in the character stack.
-            for (int j = 0; j < res.length(); j++)
-                charStack.push(res[j]);
-            res = "";
-        }
-        else
-            charStack.push(s[i]);
-    }
-    // Pop all the element, make a string and return.
-    while (!charStack.empty()) {
-        res = charStack.top() + res;
-        charStack.pop();
-    }
+        stack<int> countStack;
+        stack<string> stringStack;
+        string currentString = "";
+        int currentNum = 0;
 
-    return res;
+        for (char ch : s) {
+            if (isdigit(ch)) {
+                currentNum = currentNum * 10 + (ch - '0');
+            } else if (ch == '[') {
+                // Save the current state
+                countStack.push(currentNum);
+                stringStack.push(currentString);
+                
+                // Reset for the new nested segment
+                currentNum = 0;
+                currentString = "";
+            } else if (ch == ']') {
+                // Retrieve the saved state
+                int k = countStack.top();
+                countStack.pop();
+                
+                string prevString = stringStack.top();
+                stringStack.pop();
+                
+                // Build the decoded segment
+                string temp = "";
+                for (int i = 0; i < k; ++i) {
+                    temp += currentString;
+                }
+                
+                // Restore the previous string and append the new segment
+                currentString = prevString + temp;
+            } else {
+                // It's a letter, just append
+                currentString += ch;
+            }
+        }
+        return currentString;
