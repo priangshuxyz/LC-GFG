@@ -1,5 +1,9 @@
-<p>[Approach 1] Using Two Stacks - O(n) Time and O(n) Space
-<br>Use two stacks (one for numbers, one for characters). When ']' is found, pop till '[' to form a substring, repeat it using the top number, and push back — final stack gives the decoded string.</p>
+<p>[Approach 1] Time Complexity: O(N + M) Space Complexity: O(N + M)
+<br>When you see a [, you push the string you've built so far onto a stack and start a new, empty string for the inner part.
+
+<br>When you see a ], you finish the inner part, pop your old work, and attach the repeated inner part to it.
+
+<br>This avoids the inefficient process of decoding a string and then pushing it back onto a character stack.</p>
 
 ```cpp
     stack<int> numStack;
