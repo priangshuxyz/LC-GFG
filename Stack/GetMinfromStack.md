@@ -36,6 +36,10 @@ public:
         }
         return st.top();
     }
+    bool isEmpty() {
+        // Check if stack is empty
+        return st.empty();
+    }
     // Get the minimum element in the stack
     int getMin() {
         if (minStack.empty()) {
