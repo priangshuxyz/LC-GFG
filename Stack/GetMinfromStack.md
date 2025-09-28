@@ -51,4 +51,4 @@ public:
 ```
 
 <p>[Approach 3] Without Extra Space- O(1) Time and O(1) Space
-The idea is to use a variable minEle to track the minimum element in the stack. Instead of storing the actual value of minEle in the stack, we store a modified value when pushing an element smaller than minEle.</p>
+<br>The idea is to use a variable minEle to track the minimum element in the stack. Instead of storing the actual value of minEle in the stack, we store a modified value when pushing an element smaller than minEle.</p>
