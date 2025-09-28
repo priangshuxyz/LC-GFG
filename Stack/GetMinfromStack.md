@@ -104,3 +104,44 @@ public:
     }
 };
 
+```
+
+<p>LC solution</p>
+
+```cpp
+class MinStack {
+private: 
+    stack<int> mainStack;
+    stack<int> minValStack;
+public:
+    MinStack() {
+        minValStack.push(INT_MAX);
+    }
+    
+    void push(int val) {
+        mainStack.push(val);
+        minValStack.push(min(val, minValStack.top()));
+    }
+    
+    void pop() {
+        mainStack.pop();
+        minValStack.pop();
+    }
+    
+    int top() {
+        return mainStack.top();
+    }
+    
+    int getMin() {
+        return minValStack.top();
+    }
+};
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack* obj = new MinStack();
+ * obj->push(val);
+ * obj->pop();
+ * int param_3 = obj->top();
+ * int param_4 = obj->getMin();
+ */
