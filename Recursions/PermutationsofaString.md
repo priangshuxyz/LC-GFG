@@ -28,3 +28,33 @@ vector<string> findPermutation(string &s) {
     sort(ans.begin(), ans.end());
     return ans;
 }
+```
+<p>LC Solution</p>
+
+```cpp
+class Solution {
+public:
+    void backtrack(int idx, vector<int>& nums, vector<vector<int>>& ans) {
+        // Base Case: If the index reaches the end, a complete permutation is formed.
+        if (idx == nums.size()) {
+            ans.push_back(nums);
+            return;
+        }
+        // Iterate from the current index to the end of the array
+        for (int i = idx; i < nums.size(); i++) {
+            // 1. Choose: Place the number nums[i] at the current position idx.
+            swap(nums[idx], nums[i]);
+            // 2. Explore: Recurse for the next position.
+            backtrack(idx + 1, nums, ans);
+            // 3. Unchoose (Backtrack): Swap back to restore the array.
+            swap(nums[idx], nums[i]);
+        }
+    }
+    // The main function that LeetCode calls
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> ans;
+        // Start the backtracking process from the first index (0).
+        backtrack(0, nums, ans);
+        return ans;
+    }
+};
