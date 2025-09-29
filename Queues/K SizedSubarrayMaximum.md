@@ -3,7 +3,6 @@
 
 ```cpp
 
-    vector<int> maxOfSubarrays(vector<int>& arr, int k) {
     int n = arr.size();
     // to store the results
     vector<int> res;
