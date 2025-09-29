@@ -20,9 +20,8 @@
 ```
 
 <p>[Better Approach] - Using Max-Heap - (n * log n) Time and O(n) Space
-<br>The idea is to use priority queue or heap data structure to make sure that heap has largest item of the current window.
-<li>Create a max heap of the first k items </li>
-<li>Now iterate one by one. While the next item to be added is greater than the heap top, remove the top. We mainly make sure that the greater items of the previous window are not there in a heap.</li></p>
+<br>The idea is to use a priority queue (max heap) to find the largest item in the current window.
+<br>The heap stores pairs of {value, index} to track both an element's value and its original position. First, the heap is initialized with the first k pairs. Then, for each subsequent element in the array, its {value, index} pair is added to the heap. Before recording the window's maximum, we check the top of the heap. While the index of the top element is outside the current window's bounds, we pop it. After removing any such stale elements, the value at the top of the heap is guaranteed to be the maximum for the current window.</p>
 
 ```cpp
 
