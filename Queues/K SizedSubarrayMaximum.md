@@ -50,9 +50,7 @@
 ```
 <p>[Expected Approach] - Using Deque - O(n) Time and O(k) Space
 <br>The algorithm maintains one crucial rule (an invariant) for the deque:
-
 <br>The deque stores indices of elements from the current window, and it is always kept in decreasing order of their corresponding values in the nums array.
-
 <br>Because of this rule, the index of the largest element in the current window is always at the front of the deque (dq.front()).</p>
 
 ```cpp
