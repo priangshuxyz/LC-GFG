@@ -44,7 +44,7 @@ The idea is to recursively multiply b exactly e times. To do so, define a recurs
 ```
 
 <p>Using Inbuilt Functions - O(log e) Time and O(1) Space
-The idea is to use inbuilt functions provided by various languages to calculate b^e.
+<br>The idea is to use inbuilt functions provided by various languages to calculate b^e.
 Like in C++, pow(b, e) can be used to calculate b^e. Similarly, in Python, the exact same function can be used, or the **operator can be used to find the power.</p>
 
 ```cpp
