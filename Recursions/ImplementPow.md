@@ -29,3 +29,15 @@ The idea is to recursively multiply b exactly e times. To do so, define a recurs
 <br>The idea is to use Divide and Conquer and recursively bisect e in two equal parts. There are two possible cases:
 <br>If e is even: power(b, e) = power(b, e / 2) * power(b, e / 2); 
 <br>If e is odd: power(b, e) = b * power(b, e / 2) * power(b, e / 2); </p>
+
+```cpp
+    // Base Case: pow(b, 0) = 1
+    if (e == 0)
+        return 1;
+    if (e < 0)
+        return 1 / power(b, -e);
+    double temp = power(b, e / 2);
+    if (e % 2 == 0)
+        return temp * temp;
+    else
+        return b * temp * temp;
