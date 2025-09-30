@@ -9,7 +9,7 @@ The idea is to search for the word in the grid by exploring all possible paths. 
 // Recursive Function to check if the word exists in the matrix or not
 bool findMatch(vector<vector<char>> &mat, string &word, int x, int y, int wIdx) {
     int wLen = word.length();
-	  int n = mat.size();
+	int n = mat.size();
   	int m = mat[0].size();
     if (wIdx == wLen)
         return true;
