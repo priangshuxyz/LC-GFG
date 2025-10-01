@@ -20,7 +20,6 @@ int hIndex(vector<int> &citations) {
 <p>[Expected Approach] Using Counting Sort - O(n) Time and O(n) Space
 
 This method calculates the H-index without sorting by using a frequency counting approach. First, it creates an array to count how many papers have a specific number of citations, capping any citation count greater than the total number of papers, n, at n. Then, it iterates backward from n down to 0, maintaining a running total of papers with at least i citations. The first value i for which this accumulated count is greater than or equal to i is the H-index. This works because by starting from the highest possible value, the first time the condition is met guarantees the largest possible h that satisfies the definition.</p>
-
 ```cpp
 int hIndex(vector<int> &citations) {
     int n = citations.size();
