@@ -36,7 +36,7 @@ bool findMatch(vector<vector<char>> &mat, string &word, int x, int y, int wIdx) 
 // Function to check if the word exists in the matrix or not
 bool isWordExist(vector<vector<char>> &mat, string &word) {
     int wLen = word.length();
-	  int n = mat.size();
+	int n = mat.size();
   	int m = mat[0].size();
     // if total characters in matrix is
     // less than word length
