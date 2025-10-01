@@ -6,7 +6,6 @@ The naive solution is to simply sort the array using a standard sorting algorith
 sort(arr.begin(), arr.end());
 ```
 
-
 <p>[Better Approach] Counting 0s, 1s and 2s - Two Pass
 
 A better solution is to traverse the array once and count number of 0s, 1s and 2s, say c0, c1 and c2 respectively. Now traverse the array again, put c0 (count of 0s) 0s first, then c1 1s and finally c2 2s. This solution works in O(n) time, but it is not stable and requires two traversals of the array.</p>
