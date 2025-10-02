@@ -21,3 +21,27 @@ A simple approach is to group all the intervals by sorting them then start from 
         res.push_back({start, end});
     }
     return res;
+```
+
+<p>[Expected Approach] Checking Last Merged Interval – O(n*log(n)) Time and O(n) Space
+
+In the previous approach, for each range we are checking for possible overlaps by iterating over all the remaining ranges till the end. We can optimize this by checking only those intervals that overlap with the last merged interval. Since the intervals will be sorted based on starting point, so if we encounter an interval whose starting time lies outside the last merged interval, then all further intervals will also lie outside it. </p>
+
+```cpp
+vector<vector<int>> mergeOverlap(vector<vector<int>>& arr) {
+    // Sort intervals based on start values
+    sort(arr.begin(), arr.end());
+    vector<vector<int>> res;
+    res.push_back(arr[0]);
+    for (int i = 1; i < arr.size(); i++) {
+        vector<int>& last = res.back();
+        vector<int>& curr = arr[i];
+        // If current interval overlaps with the last merged
+        // interval, merge them 
+        if (curr[0] <= last[1]) 
+            last[1] = max(last[1], curr[1]);
+        else 
+            res.push_back(curr);
+    }
+    return res;
+}
