@@ -44,3 +44,32 @@ The approach is to traverse the array twice. In the first traversal, find the ma
         }
     }
     return secondLargest;
+```
+<p>[Expected Approach] One Pass Search
+Time Complexity: O(n), as we are traversing the array only once.
+Auxiliary space: O(1)
+
+The idea is to keep track of the largest and second largest element while traversing the array. Initialize largest and secondLargest with -1. Now, for any index i,
+
+If arr[i] > largest, update secondLargest with largest and largest with arr[i].
+
+Else If arr[i] < largest and arr[i] > secondLargest, update secondLargest with arr[i]. </p>
+
+```cpp
+    int n = arr.size();
+    int largest = -1, secondLargest = -1;
+    // finding the second largest element
+    for (int i = 0; i < n; i++) {
+        // If arr[i] > largest, update second largest with
+        // largest and largest with arr[i]
+        if(arr[i] > largest) {
+        	secondLargest = largest;
+            largest = arr[i];
+        }
+        // If arr[i] < largest and arr[i] > second largest, 
+        // update second largest with arr[i]
+      	else if(arr[i] < largest && arr[i] > secondLargest) {
+        	secondLargest = arr[i];
+        }
+    }
+    return secondLargest;
