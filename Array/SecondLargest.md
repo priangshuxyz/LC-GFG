@@ -20,3 +20,27 @@ The idea is to sort the array in non-decreasing order. Now, we know that the lar
     }
     // If no second largest element was found, return -1
     return -1;
+```
+<p>[Better Approach] Two Pass Search
+Time Complexity: O(2*n) = O(n), as we are traversing the array two times.
+Auxiliary space: O(1)
+
+The approach is to traverse the array twice. In the first traversal, find the maximum element. In the second traversal, find the maximum element ignoring the one we found in the first traversal.</p>
+
+```cpp
+    int n = arr.size();
+    int largest = -1, secondLargest = -1;
+    // finding the largest element
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > largest)
+            largest = arr[i];
+    }
+    // finding the second largest element
+    for (int i = 0; i < n; i++) {
+        // Update second largest if the current element is greater
+        // than second largest and not equal to the largest
+        if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i];
+        }
+    }
+    return secondLargest;
