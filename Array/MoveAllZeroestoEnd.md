@@ -9,7 +9,7 @@ Then, fill all the remaining positions in temporary array with 0.
 Finally, copy all the elements from temporary array to arr[].</p>
 
 ```java
-        static void pushZerosToEnd(int[] arr) {
+static void pushZerosToEnd(int[] arr) {
         int n = arr.length;
         int[] temp = new int[n];
         // to keep track of the index in temp[]
