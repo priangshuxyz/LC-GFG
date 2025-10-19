@@ -65,3 +65,13 @@ The idea is to iterate over the first half of the array and swap each element wi
             arr[n - i - 1] = temp;
         }
     }
+```
+
+<p>Using Inbuilt Methods - O(n) Time and O(1) Space
+
+The idea is to use inbuilt reverse methods available across different languages. </p>
+
+```java
+static void reverseArray(List<Integer> arr) {
+        Collections.reverse(arr);
+    }
