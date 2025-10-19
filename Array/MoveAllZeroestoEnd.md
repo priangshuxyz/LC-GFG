@@ -58,3 +58,27 @@ Iterate from count to the end of array and fill all indices with 0.
         while (count < arr.length)
             arr[count++] = 0;
     }
+```
+
+<p>[Expected Approach] One Traversal Time Complexity: O(n),
+Auxiliary Space: O(1)
+        
+The idea is similar to the previous approach where we took a pointer, say count to track where the next non-zero element should be placed. However, on encountering a non-zero element, instead of directly placing the non-zero element at arr[count], we will swap the non-zero element with arr[count]. This will ensure that if there is any zero present at arr[count], it is pushed towards the end of array and is not overwritten.</p>
+
+```java
+        // Pointer to track the position 
+        // for next non-zero element
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            // If the current element is non-zero
+            if (arr[i] != 0) {
+                // Swap the current element with
+                // the 0 at index 'count'
+                int temp = arr[i];
+                arr[i] = arr[count];
+                arr[count] = temp;
+                // Move 'count' pointer to 
+                // the next position
+                count++;
+            }
+        }
