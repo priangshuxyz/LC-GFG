@@ -47,3 +47,21 @@ While left pointer is less than the right pointer, swap the elements at these tw
             right--;
         }
     }
+```
+
+<p>[Expected Approach - 2] By Swapping Elements - O(n) Time and O(1) Space
+
+The idea is to iterate over the first half of the array and swap each element with its corresponding element from the end. So, while iterating over the first half, any element at index i is swapped with the element at index (n - i - 1).</p>
+
+```java
+     static void reverseArray(int[] arr) {
+        int n = arr.length;   
+        // Iterate over the first half 
+        // and for every index i, swap
+        // arr[i] with arr[n - i - 1]
+        for (int i = 0; i < n / 2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[n - i - 1];
+            arr[n - i - 1] = temp;
+        }
+    }
