@@ -45,3 +45,13 @@ Finally, copy all the elements of temporary array back into the original array.<
         for (int i = 0; i < n; i++)
             arr[i] = temp[i];
     }
+```
+
+<p>[Expected Approach 2] Using Reversal Algorithm - O(n) Time and O(1) Space
+
+The idea is based on the observation that if we left rotate the array by d positions, the last (n - d) elements will be at the front and the first d elements will be at the end. 
+
+Reverse the subarray containing the first d elements of the array.
+Reverse the subarray containing the last (n - d) elements of the array.
+
+Finally, reverse all the elements of the array.</p>
