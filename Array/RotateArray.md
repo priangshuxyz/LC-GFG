@@ -15,3 +15,12 @@ In each iteration, shift the elements by one position to the left in a circular 
             arr[n - 1] = first;
         }
     }
+```
+
+<p>[Better Approach] Using Temporary Array - O(n) Time and O(n) Space
+
+The idea is to use a temporary array of size n, where n is the length of the original array. If we left rotate the array by d positions, the last n - d elements will be at the front and the first d elements will be at the end.
+
+Copy the last (n - d) elements of original array into the first n - d positions of temporary array.
+Then copy the first d elements of the original array to the end of temporary array. 
+Finally, copy all the elements of temporary array back into the original array.</p>
