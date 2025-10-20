@@ -44,3 +44,22 @@ This approach uses a hash array (or frequency array) to track the presence of ea
         }
         return -1;
     }
+```
+
+<p>[Expected Approach 1] Using Sum of n terms Formula - O(n) Time and O(1) Space
+
+The sum of the first n natural numbers is given by the formula (n * (n + 1)) / 2. The idea is to compute this sum and subtract the sum of all elements in the array from it to get the missing number.</p>
+
+```java
+   public static int missingNum(int[] arr) {
+        long n = arr.length + 1;
+        // Calculate the sum of array elements
+        long sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        // Use long for expected sum to avoid overflow
+        long expSum = n * (n + 1) / 2;
+        // Return the missing number
+        return (int)(expSum - sum);
+    }
