@@ -4,8 +4,9 @@ The very basic approach is to sort the given array in descending order and retur
 
 ```java
     static int kthLargest(Integer[] arr, int K) {
+        int n = nums.length;
         // Sort the array in descending order
-        Arrays.sort(arr, Collections.reverseOrder());
+        Arrays.sort(nums);
         // Return K'th largest element
-        return arr[K - 1];
+        return nums[n - k];
     }
