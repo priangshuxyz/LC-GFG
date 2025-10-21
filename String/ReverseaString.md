@@ -3,12 +3,13 @@
 The idea is to start at the last character of the string and move backward, appending each character to a new string res. This new string res will contain the characters of the original string in reverse order.</p>
 
 ```java
-string reverseString(string& s) {
-    string res; 
-  	// Traverse on s in backward direction
-  	// and add each charecter to a new string
-    for (int i = s.size() - 1; i >= 0; i--) {
-        res += s[i];
+    static String reverseString(String s) {
+        StringBuilder res = new StringBuilder();
+  
+        // Traverse on s in backward direction
+        // and add each character to a new string
+        for (int i = s.length() - 1; i >= 0; i--) {
+            res.append(s.charAt(i));
+        }
+        return res.toString();
     }
-    return res;
-}
