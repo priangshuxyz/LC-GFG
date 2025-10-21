@@ -33,3 +33,24 @@ string reverseString(string &s) {
     }
     return s;
 }
+
+// for LC
+class Solution {
+    public void reverseString(char[] s) {
+        int left = 0;
+        int right = s.length - 1; // .length for arrays
+
+        while (left < right) {
+            // 1. This is the manual swap
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+            
+            // 2. Move pointers
+            left++;
+            right--;
+        }
+        
+        // 3. No return statement is needed
+    }
+}
