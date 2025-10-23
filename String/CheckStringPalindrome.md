@@ -47,3 +47,16 @@ public:
         return cleanStr == string(cleanStr.rbegin(), cleanStr.rend());
     }
 };
+```
+
+<p>Using Two-Pointers - O(n) time and O(1) space
+
+The idea is to keep two pointers, one at the beginning (left) and the other at the end (right) of the string.
+
+Then compare the characters at these positions. If they don't match, the string is not a palindrome, and return 0.
+
+If they match, the pointers move towards each other (left pointer moves right, right pointer moves left) and continue checking.
+
+If the pointers cross each other without finding a mismatch, the string is confirmed to be a palindrome, and returns 1.</p>
+
+
