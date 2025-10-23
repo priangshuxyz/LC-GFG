@@ -21,3 +21,7 @@ int isPalindromeUtil(string & s, int left, int right) {
     // and right pointer to the left
     return isPalindromeUtil(s, left + 1, right - 1);
 }
+int isPalindrome(string s){
+    int left = 0, right = s.length() - 1;
+    return isPalindromeUtil(s, left, right);
+}
