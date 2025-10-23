@@ -24,3 +24,9 @@ int countFreq(string& pat, string& txt)
     }
     return res;
 }
+```
+
+<p>use KMP algorithm. 
+
+Time Complexity: O(M + N)
+Auxiliary Space: O(M)</p>
