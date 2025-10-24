@@ -28,7 +28,9 @@ public:
 
 <p>[Expected Approach-2] Bottom-Up Approach
 
-Time Complexity: O(n), Auxiliary Space: O(n)</p>
+Time Complexity: O(n), Auxiliary Space: O(n)
+
+This approach uses dynamic programming to solve the Fibonacci problem by storing previously calculated Fibonacci numbers, avoiding the repeated calculations of the recursive approach. Instead of breaking down the problem recursively, it iteratively builds up the solution by calculating Fibonacci numbers from the bottom up.</p>
 
 ```cpp
 int nthFibonacci(int n){
