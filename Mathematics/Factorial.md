@@ -10,4 +10,4 @@ int factorial(int n) {
             ans = ans * i;
         }
         return ans;
-}
+    }
