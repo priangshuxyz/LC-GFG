@@ -35,7 +35,7 @@ int countPrimes(int n) {
         }
         // 1. Create our list. 
         // Initialize all as 'true' (assumed prime).
-        std::vector<bool> isPrime(n, true);
+        vector<bool> isPrime(n, true);
         // 2. 0 and 1 are not prime.
         isPrime[0] = false;
         isPrime[1] = false;
