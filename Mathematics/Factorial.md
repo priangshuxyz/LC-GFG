@@ -11,3 +11,15 @@ int factorial(int n) {
         }
         return ans;
     }
+```
+
+<p>[Another Approach]- Recursive Solution O(n) Time and O(n) Space</p>
+
+```cpp
+int factorial(int n)
+{
+    // Calculating factorial of number
+    if (n == 0 || n == 1)
+        return 1;
+    return n * factorial(n - 1);
+}
