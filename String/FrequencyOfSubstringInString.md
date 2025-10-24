@@ -26,7 +26,9 @@ int countFreq(string& pat, string& txt)
 }
 ```
 
-<p>use KMP algorithm. 
+<p>Use KMP algorithm. 
 
 Time Complexity: O(M + N)
 Auxiliary Space: O(M)</p>
+
+```cpp
