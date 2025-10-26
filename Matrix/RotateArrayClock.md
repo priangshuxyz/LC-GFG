@@ -34,11 +34,15 @@ void rotateMatrix(vector<vector<int>> &mat){
         // Consider elements in group of 4 
         // as P1, P2, P3 & P4 in current square
         for (int j = i; j < n - i - 1; j++) {
-          	
+          	//Top-Left corner into a temporary variable.
             int temp = mat[i][j];
+//Top-Right corner to the Top-Left corner.
             mat[i][j] = mat[j][n - 1 - i];
+//Bottom-Right corner to the Top-Right corner.
             mat[j][n - 1 - i] = mat[n - 1 - i][n - 1 - j];
+//Moves the value from the Bottom-Left corner to the Bottom-Right corner.
             mat[n - 1 - i][n - 1 - j] = mat[n - 1 - j][i];
+//(from the original Top-Left) to the Bottom-Left corner
             mat[n - 1 - j][i] = temp;
         }
     }
