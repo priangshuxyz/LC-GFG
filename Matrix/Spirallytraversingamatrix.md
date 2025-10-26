@@ -69,3 +69,16 @@ vector<int> spirallyTraverse(vector<vector<int>>& mat) {
   
     return res;
 }
+```
+
+<p>[Expected Approach] Using Boundary Traversal - O(m*n) Time and O(1) Space
+
+We can print the matrix in a spiral order by dividing it into loops or boundaries. We print the elements of the outer boundary first, then move inward to print the elements of the inner boundaries.
+
+<li>Define the boundaries of the matrix with variables top, bottom, left, and right.</li>
+<li>Print the top row from left to right and increment top.</li>
+<li>Print the right column from top to bottom and decrement right.</li>
+<li>Check if boundaries have crossed; if not, print the bottom row from right to left and decrement bottom.</li>
+<li>Print the left column from bottom to top and increment left.</li>
+<li>Repeat until all boundaries are crossed.</li>
+</p>
