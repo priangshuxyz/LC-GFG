@@ -47,3 +47,30 @@ void rotateMatrix(vector<vector<int>> &mat){
         }
     }
 }
+```
+
+<p>[Expected Approach 2] Reversing Rows and Transposing - O(n2) Time and O(1) Space
+    
+Rotating a square matrix 90 degrees counterclockwise, each element moves to a new position. The top row becomes the left most column in reverse order, the second row becomes the second-left most column in reverse order, and so on. By first reversing the rows, you rearrange the elements in such a way that when you transpose them, they end up in their final rotated positions.
+
+<li>Reverse every individual row of the matrix</li>
+<li>Perform Transpose of the matrix</li>
+
+Clockwise 90° Rotation: Transpose the matrix, then reverse each row.
+
+Counterclockwise 90° Rotation: Reverse each row, then transpose the matrix.</p>
+
+```cpp
+void rotateMatrix(vector<vector<int>> &mat){ 
+  	int n = mat.size();
+  	
+  	// Reverse each row
+    for (int i = 0; i < n; i++)
+        reverse(mat[i].begin(), mat[i].end());
+
+    // Performing Transpose
+    for (int i = 0; i < n; i++) {
+        for (int j = i+1; j < n; j++)
+            swap(mat[i][j], mat[j][i]);
+    }
+}
