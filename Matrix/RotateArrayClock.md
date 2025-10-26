@@ -56,7 +56,7 @@ Rotating a square matrix 90 degrees counterclockwise, each element moves to a ne
 <li>Reverse every individual row of the matrix</li>
 <li>Perform Transpose of the matrix</li>
 
-<p>Clockwise 90° Rotation: Transpose the matrix, then reverse each row.</p>
+<br>Clockwise 90° Rotation: Transpose the matrix, then reverse each row.<br>
 
 Counterclockwise 90° Rotation: Reverse each row, then transpose the matrix.</p>
 
