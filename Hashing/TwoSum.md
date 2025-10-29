@@ -25,3 +25,44 @@ bool twoSum(vector<int> &arr, int target) {
     // all possibilities
     return false;
 }
+```
+
+<p>[Better Approach 1] Sorting and Binary Search - O(n × log(n)) time and O(1) space
+
+To check if a pair with a given sum exists in the array, we first sort the array. Then for each element, we compute the required complement (i.e., target - arr[i]) and perform binary search on the remaining subarray (from index i+1 to end) to find that complement.</p>
+
+
+```cpp
+// Function to perform binary search
+bool binarySearch(vector<int> &arr, int left,
+                          int right, int target){
+    while (left <= right){
+        int mid = left + (right - left) / 2;
+
+        if (arr[mid] == target)
+            return true;
+        if (arr[mid] < target)
+            left = mid + 1;
+        else
+            right = mid - 1;
+    }
+    return false;
+}
+
+bool twoSum(vector<int> &arr, int target){
+    
+    sort(arr.begin(), arr.end());
+    
+    for (int i = 0; i < arr.size(); i++){
+        int complement = target - arr[i];
+
+        // Use binary search to 
+        // find the complement
+        if (binarySearch(arr, i + 1, 
+                    arr.size() - 1, complement))
+            return true;
+    }
+  
+    // If no pair is found
+    return false;
+}
