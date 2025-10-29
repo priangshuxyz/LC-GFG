@@ -66,3 +66,65 @@ bool twoSum(vector<int> &arr, int target){
     // If no pair is found
     return false;
 }
+```
+
+<p>[Better Approach 2] Sorting and Two-Pointer Technique - O(n × log(n)) time and O(1) space
+
+The idea is to use the two-pointer technique but for using the two-pointer technique, the array must be sorted. Once the array is sorted then we can use this approach by keeping one pointer at the beginning (left) and another at the end (right) of the array. </p>
+
+```cpp
+bool twoSum(vector<int> &arr, int target){
+  
+    sort(arr.begin(), arr.end());
+
+    int left = 0, right = arr.size() - 1;
+
+    // Iterate while left pointer 
+    // is less than right
+    while (left < right){
+        int sum = arr[left] + arr[right];
+
+        // Check if the sum matches the target
+        if (sum == target)
+            return true;
+        else if (sum < target)
+        
+        // Move left pointer to the right
+            left++; 
+        else
+        
+        // Move right pointer to the left
+            right--; 
+    }
+    // If no pair is found
+    return false;
+}
+```
+
+<p>[Expected Approach] Using Hash Set - O(n) time and O(n) space
+
+Hashing provides a more efficient solution to the 2-Sum problem. Rather than checking every possible pair, we store each number in an unordered set during iterating over the array's elements. For each number, we calculate its complement (i.e., target - current number) and check if this complement exists in the set. If it does, we have successfully found the pair that sums to the target. </p>
+
+```cpp
+bool twoSum(vector<int> &arr, int target){
+  
+    // Create an unordered_set to store the elements
+    unordered_set<int> s;
+
+    for (int i = 0; i < arr.size(); i++){
+
+        // Calculate the complement that added to
+        // arr[i], equals the target
+        int complement = target - arr[i];
+
+        // Check if the complement exists in the set
+        if (s.find(complement) != s.end())
+            return true;
+
+        // Add the current element to the set
+        s.insert(arr[i]);
+    }
+  
+    // If no pair is found
+    return false;
+}
