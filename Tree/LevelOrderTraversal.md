@@ -28,3 +28,47 @@ vector<vector<int>> levelOrder(Node* root) {
     levelOrderRec(root, 0, res);
     return res;
 }
+```
+
+<p>[Expected Approach] Using Queue (Iterative) - O(n) time and O(n) space
+    
+The idea is to use a queue to traverse the tree level by level. Start by adding the root to the queue. Then, repeatedly remove a node from the queue, store its value in the result, and add its left and right children to the queue. Continue this process until the queue is empty.</p>
+
+```cpp
+// Iterative method to perform level order traversal
+vector<vector<int>> levelOrder(Node *root) {
+    if (root == nullptr)
+        return {};
+
+    // Create an empty queue for level order traversal
+    queue<Node *> q;
+    vector<vector<int>> res;
+
+    // Enqueue Root
+    q.push(root);
+    int currLevel = 0;
+
+    while (!q.empty()) {
+        int len = q.size();
+        res.push_back({});
+
+        for (int i = 0; i < len; i++) {
+
+            // Add front of queue and remove it from queue
+            Node *node = q.front();
+            q.pop();
+
+            res[currLevel].push_back(node->data);
+
+            // Enqueue left child
+            if (node->left != nullptr)
+                q.push(node->left);
+
+            // Enqueue right child
+            if (node->right != nullptr)
+                q.push(node->right);
+        }
+        currLevel++;
+    }
+    return res;
+}
